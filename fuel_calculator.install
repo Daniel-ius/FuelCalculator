@@ -1,0 +1,92 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the fuel_calculator module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function fuel_calculator_schema() {
+  $schema['fuel_calculation'] = [
+    'description' => 'Stores fuel calculation data.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique fuel calculation ID.',
+      ],
+      'uuid' => [
+        'type' => 'char',
+        'length' => 36,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Unique Key: Universally unique identifier for this entity.',
+      ],
+      'distance' => [
+        'type' => 'numeric',
+        'precision' => 10,
+        'scale' => 2,
+        'not null' => TRUE,
+        'description' => 'Distance in kilometers.',
+      ],
+      'efficiency' => [
+        'type' => 'numeric',
+        'precision' => 10,
+        'scale' => 2,
+        'not null' => TRUE,
+        'description' => 'Fuel efficiency in L/100km.',
+      ],
+      'price' => [
+        'type' => 'numeric',
+        'precision' => 10,
+        'scale' => 2,
+        'not null' => TRUE,
+        'description' => 'Fuel price per liter.',
+      ],
+      'fuel_spent' => [
+        'type' => 'numeric',
+        'precision' => 10,
+        'scale' => 2,
+        'not null' => TRUE,
+        'description' => 'Calculated fuel spent in liters.',
+      ],
+      'fuel_cost' => [
+        'type' => 'numeric',
+        'precision' => 10,
+        'scale' => 2,
+        'not null' => TRUE,
+        'description' => 'Calculated fuel cost.',
+      ],
+      'user_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'description' => 'The user ID who performed the calculation.',
+      ],
+      'ip_address' => [
+        'type' => 'varchar',
+        'length' => 45,
+        'not null' => FALSE,
+        'description' => 'IP address of the user.',
+      ],
+      'created' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Timestamp when the calculation was created.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'unique keys' => [
+      'uuid' => ['uuid'],
+    ],
+    'indexes' => [
+      'user_id' => ['user_id'],
+      'created' => ['created'],
+      'ip_address' => ['ip_address'],
+    ],
+  ];
+
+  return $schema;
+  }

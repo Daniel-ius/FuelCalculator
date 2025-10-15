@@ -1,0 +1,4 @@
+fuel_calculator:
+  default_efficiency: 6.5
+  default_distance: 250
+  default_price: 1.49

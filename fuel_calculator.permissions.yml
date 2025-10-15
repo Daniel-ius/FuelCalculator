@@ -1,0 +1,13 @@
+access fuel calculator:
+  title: 'Access Fuel Calculator page'
+  description: 'Allow users to access the fuel calculator form'
+  restrict: FALSE
+
+administer fuel calculator:
+  title: 'Administer Fuel Calculator settings'
+  description: 'Allow users to configure Fuel Calculator settings'
+  restrict: TRUE
+
+access fuel calculator api:
+  title: 'Access Fuel Calculator API'
+  description: 'Allow users to access the fuel calculator REST API.'

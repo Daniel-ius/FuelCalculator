@@ -1,0 +1,10 @@
+name: Fuel Calculator
+type: module
+description: Provides a fuel consumption calculator form, block, and configuration with database storage.
+core_version_requirement: 10 | ^11
+package: Custom
+dependencies:
+  - drupal:system
+  - drupal:rest
+  - drupal:serialization
+  - drupal:user

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Contains fuel_calculator.module.
+ */
+
+function fuel_calculator_theme($existing, $type, $theme, $path) {
+  return [
+    'fuel_calculator_form' => [
+      'render element' => 'form',
+      'template' => 'fuel-calculator-form',
+    ],
+  ];
+}

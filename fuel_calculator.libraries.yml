@@ -1,0 +1,16 @@
+fuel_calculator_assets:
+  version: 1.x
+  js:
+    js/fuel-calculator.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.ajax
+    - core/jquery
+
+fuel_calculator_tailwind:
+  version: 1.x
+  css:
+    theme:
+      https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css: { type: external, minified: true }
+  dependencies:
+    - fuel_calculator/fuel_calculator_assets
