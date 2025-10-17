@@ -14,3 +14,14 @@ fuel_calculator.settings:
     _title: 'Fuel Calculator Settings'
   requirements:
     _permission: 'administer site configuration'
+
+fuel_calculator.api:
+  path: '/api/v1/fuel-calculator'
+  defaults:
+    _controller: '\Drupal\fuel_calculator\Controller\FuelCalculatorController::calculate'
+  methods: [POST]
+  requirements:
+    _permission: 'access fuel calculator api'
+    _format: 'json'
+  options:
+    no_cache: true

@@ -1,4 +1,4 @@
 services:
   fuel_calculator.calculation_service:
     class: Drupal\fuel_calculator\Service\CalculationService
-    arguments: ['@entity_type.manager', '@current_user', '@request_stack']
+    arguments: ['@entity_type.manager', '@logger.factory', '@current_user', '@request_stack']

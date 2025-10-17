@@ -12,13 +12,13 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
  *   admin_label = @Translation("Fuel Calculator Block")
  * )
  */
-class FuelCalculatorBlock extends BlockBase {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function build() {
-    return \Drupal::formBuilder()->getForm('Drupal\fuel_calculator\Form\FuelCalculatorForm');
-  }
-
+class FuelCalculatorBlock extends BlockBase
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function build()
+    {
+        return \Drupal::formBuilder()->getForm('Drupal\fuel_calculator\Form\FuelCalculatorForm');
+    }
 }
